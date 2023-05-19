@@ -97,7 +97,7 @@
   transition: all 0.2s;
   position: relative;
   cursor: pointer;
-  margin-left: 5%;
+  margin-left: 4%;
 }
 
 .card ul, li{
@@ -187,6 +187,15 @@
     line-height: 20px;
     color: #ffffff;
   }
+  .regras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card .card1 ul, li{
+    color: white;
+  }
 
   .card1 .identity{
     text-align: left;
@@ -242,5 +251,3 @@
   }
 
   
-  
- 
