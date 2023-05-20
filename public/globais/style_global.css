@@ -1,0 +1,35 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+  }
+   
+::-webkit-scrollbar-thumb {
+    background: #172022; 
+    border-radius: 10px;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #172022; 
+  }
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 2540px;
+    background: linear-gradient(180deg, #223033 53.11%, #23404B 75.34%, #243753 100%);
+    color: #FFF;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+  
+}
