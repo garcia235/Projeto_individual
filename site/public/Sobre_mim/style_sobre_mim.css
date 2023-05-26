@@ -1,0 +1,7 @@
+.first_page{
+    width: 100%;
+    height: 100vh;   
+    display: flex;
+    position: relative;
+    background: linear-gradient(180deg, #23404B 0%, #243753 100%);
+}

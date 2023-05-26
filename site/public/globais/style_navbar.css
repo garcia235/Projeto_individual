@@ -31,10 +31,10 @@ header ul li a{
 
 .navbar{
     display: flex;
-    width: 50%;
+    width: 40%;
     align-items: center;
     list-style: none;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     height: 18px;
     right: 5%;
