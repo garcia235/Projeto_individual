@@ -1,4 +1,6 @@
 Roteiro do site
+--font-family: 'Maitree';
+
 -- Sobre mim
 -Linha da vida
 -Descrição de como o tênis de mesa me acompanha
