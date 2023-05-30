@@ -1,0 +1,25 @@
+body{
+    background: linear-gradient(#223033, #243753 100%);
+
+}
+
+.quiz{
+    width: 85%;
+    height: 100vh;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%;
+    color:#243753
+}
+
+.content{
+    display: grid;
+    position: relative;
+    flex-direction: column; 
+    background-color: aliceblue;
+    padding: 10% 25px;
+    border-radius: 15px;
+}
+
