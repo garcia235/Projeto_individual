@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globais/style_menu.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js">
+    </script>
+    <script src="../js/funcoes.js"></script>
+    <title>Butterfly || Dashboard</title>
+</head>
+
+<body>
+    <div class="menu_lateral">
+        <div class="container">
+            <ul>
+                <a href=""><img class="user" src="assets/🦆 icon _user_.svg" alt=""></a>
+                <li class="list">
+                    <a href="../home/homeLogin.html">
+                        <span class="icon"><img src="assets/icon_racket.svg" alt="" class="iconImg"></span>
+                        <span class="title">Jogadores</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../pong/pong.html">
+                        <span class="icon"><img src="assets/🦆 icon _device gamepad 2_.svg" alt=""
+                                class="iconImg"></span>
+                        <span class="title">Pong</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="../dashboard/dashboard.html">
+                        <span class="icon"><img src="assets/🦆 icon _crown_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../faleComigo/faleComigo.html">
+                        <span class="icon"><img src="assets/🦆 icon _message circle_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Contato</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../index.html" onclick="limparSessao()">
+                        <span class="icon"><img src="assets/🦆 icon _login_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Sair</span>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+
+    <div class="container">
+        <div class="div_tentativas">
+            <h1 class="textTemp">Tempo de cada partida</h1>
+            <div class="chart1">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="div_linha"></div>
+
+    <div class="container">
+        <div class="divQtd">
+            <h1 class="text_qtd">Quantidade de tentativas</h1>
+            <div class="chart2">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var fkUsuarioVar = sessionStorage.ID_USUARIO;
+    buscarPartidas();
+
+    function buscarPartidas() {
+        fetch(`/usuarios/buscarPartidas/${fkUsuarioVar}`, { cache: 'no-store' })
+            .then(function (resultado) {
+                console.log("Deu certo2");
+                if (resultado.ok) {
+                    resultado.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+                        grafico(resposta, fkUsuarioVar);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function grafico(resposta, fkUsuarioVar) {
+        var pontos = resposta[0].pontos;
+        var partidas = resposta[0].partidas;
+        var temposPartida = resposta.map(item => item.tempo);
+        var tempo = resposta[0].tempo;
+        console.log(temposPartida)
+
+
+        //grafico 1 - BARRAS
+
+        const labels = temposPartida.map((_, index) => `Partida ${index + 1}`);
+
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Tempo de Partidas',
+                data: temposPartida.map(tempo => ({ y: tempo })),
+                backgroundColor: [
+                    'rgb(6, 162, 152)',
+                    'rgb(50, 210, 100)'
+                ],
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        console.log(data.datasets)
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: { responsive: true, scales: { y: { beginAtZero: true } } }
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+
+        ////
+        //grafico 2
+
+        const labels2 = [
+            'Partidas',
+            'Pontos Acumulados',
+        ];
+
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                data: [partidas, pontos],
+                backgroundColor: [
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 99, 132)'
+                ],
+            }]
+        };
+
+        const config2 = {
+            type: 'pie',
+            data: data2,
+            options: {}
+        };
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+    }
+
+</script>

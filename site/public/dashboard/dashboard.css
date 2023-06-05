@@ -1,0 +1,111 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #243753;
+    color: white;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.first_page{
+    display: flex;
+    position: relative;
+}
+
+.div_tentativas{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.textTemp{
+  position: absolute;
+  width: 55%;
+  height: auto;
+  left: 30%;
+  top: 5%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 61px;
+  text-align: center;
+
+  color: #FFFFFF;
+
+}
+
+.chart1 {
+  display: flex;
+  position: relative;
+  top: 50%;
+  left: 30%;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(135, 108, 253, 0.2), 0 6px 20px 0  rgba(121, 179, 255, 0.5);
+  border-radius: 5px; 
+  width: 50vw; 
+  height: 55vh;
+}
+
+.div_linha{
+      position: absolute;
+      width: 1100px;
+      border: 1px solid #FFFFFF;
+      top: 90%;
+      left: 15%;
+}
+.divQtd{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.text_qtd{
+  position: absolute;
+  width: 50%;
+  left: 35%;
+  top: 40%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 61px;
+  text-align: center;
+
+  color: #FFFFFF;
+
+}
+
+
+.chart2 {
+  display: flex;
+  position: relative;
+  margin-top: 40%;
+  left: 30%;
+  align-content: center;
+  justify-content: center;
+  
+  border-radius: 5px; 
+  width: 50vw;
+  height: 50vh;
+  margin-bottom: 5%;
+}
+
+
+
+

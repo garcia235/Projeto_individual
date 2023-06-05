@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #243753;
+    color: white;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    position: relative;
+    left: 30%;
+    top: 5%;
+}
+
+.div_linha {
+    position: absolute;
+    width: 1100px;
+    border: 1px solid #FFFFFF;
+    top: 50%;
+    left: 15%;
+}
+
+.faleComigo {
+    position: absolute;
+    width: 304px;
+    height: 76px;
+    left: 45%;
+    top: 60%;
+
+    font-family: 'Maitree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 82px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+
+.form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(171, 165, 255, 0.658);
+    --border-after-color: #5891ff;
+    --input-hovered-color: #4985e01f;
+    position: relative;
+    width: var(--width-of-input);
+}
+
+.input {
+    color: #fff;
+    font-size: 0.9rem;
+    background: rgba(116, 103, 255, 0.1);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+}
+
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+textarea:hover {
+    background: var(--input-hovered-color);
+
+}
+
+textarea:focus {
+    outline: none;
+
+}
+
+textarea:focus~.input-border {
+    width: 400px;
+
+}
+
+.area_mensagem {
+    display: flex;
+    position: absolute;
+    width: 350px;
+    left: 19.5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.area_mensagem label{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 90px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.area_contato textarea{
+    width: 400px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
+
+
+
+.area_contato {
+    display: flex;
+    margin-top: 15%;
+    margin-left: 20%;
+    width: 900px;
+    height: 70vh;
+    background: rgba(3, 0, 39, 0.70);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+
+.button{
+    display: grid;
+    position: relative;
+    place-items: center;
+    left: 40%;
+    top: 40%;
+}
+
+.button button{
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    width: 150px;
+    text-transform: uppercase;
+    background-color: #5891ff;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.button button:hover{
+    background-color: #0055ff;
+    transition: 0.6s;
+    transform: scale(1.2);
+}
+
+.button button:hover {
+    animation: shake 0.5s linear 1;
+  }
+
+  @keyframes shake {
+    0% {
+      rotate: 0deg;
+    }
+  
+    33% {
+      rotate: 5deg;
+    }
+  
+    66% {
+      rotate: -5deg;
+    }
+  
+    100% {
+      rotate: 5deg;
+    }
+  }

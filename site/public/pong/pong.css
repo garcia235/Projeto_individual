@@ -1,0 +1,25 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #243753;
+    color: white;
+    display: grid;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.pong{
+    display: grid;
+    position: relative;
+    width: 10%;
+    place-items: center;
+    left: 25%;
+    top: 20%;
+}

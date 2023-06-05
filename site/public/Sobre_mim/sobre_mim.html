@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../globais/style_navbar.css">
     <link rel="stylesheet" href="../globais/style_global.css">
     <link rel="stylesheet" href="style_sobre_mim.css">
     <script src="../globais/navbar.js"></script>
@@ -84,13 +83,12 @@
                     </svg>
                 </div>
             </div>
-                <ul class="navbar">
-            <li><a href="../landing_page/landing_page.html">Home</a></li>
-            <li><a href="">Sobre Mim</a></li>
-            <li><a href="">Contato</a></li>
-            <li>|</li>
-            <li><a href="">Log In</a></li>
-                </ul>
+            <ul class="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Sobre_mim/sobre_mim.html">Sobre Mim</a></li>
+                <li>|</li>
+                <li><a href="../login/login.html">Log In</a></li>
+              </ul>
             </div>
         </div>
 </header>
@@ -122,24 +120,70 @@
             <h1 class="text_linha_da_vida">Linha da Vida</h1>
             <div class="links_linha">
                 <div class="linha"></div>
-                <div class="div_vida"></div>
-                <p class="ano2017">2017</p>
-                <div class="div_vida"></div>
-                <p class="ano2018">2018</p>
-                <div class="div_vida"></div>
-                <p class="ano2019">2019</p>
-                <div class="div_vida"></div>
-                <p class="ano2020">2020</p>
-                <div class="div_vida"></div>
-                <p class="ano2021">2021</p>
-                <div class="div_vida"></div>
-                <p class="ano2022">2022</p>
-                <div class="div_vida"></div>
-                <p class="ano2023">2023</p>
+                <p class=" ano2017">2017</p>
+                <button onclick="ano2017()" class="ano div_vida"></button>
+                <p class=" ano2018">2018</p>
+                <button onclick="ano2018()" class="ano div_vida"></button>
+                <p class=" ano2019">2019</p>
+                <button onclick="ano2019()" class="ano div_vida"></button>
+                <p class=" ano2020">2020</p>
+                <button onclick="ano2020()" class="ano div_vida"></button>
+                <p class=" ano2021">2021</p>
+                <button onclick="ano2021()" class="ano div_vida"></button>
+                <p class=" ano2022">2022</p>
+                <button  onclick="ano2022()"class="ano div_vida"></button>
+                <p class=" ano2023">2023</p>
+                <button onclick="ano2023()" class="ano div_vida"></button>
             </div>
-            <div class="img_linha_da_vida"><img src="assets/tableImg.svg" alt=""></div>
+            <div id="img_linha_da_vida"></div>
         </div>
     </div>
-
 </body>
 </html>
+
+<script>
+    function ano2017(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/tableImg.svg" alt="">
+        <p class="text_linha_da_vida1">Quando meus pais me deram minha primeira raquete profissional de tênis de mesa.</p>
+    `
+    }
+    function ano2018(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/table6.svg">
+    
+    <p class="text_linha_da_vida1">Comecei a jogar constantemente na escola e assim fui me destacando entre outros alunos.</p>`
+    }
+    function ano2019(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/table4.svg" alt="">
+        
+        <p class="text_linha_da_vida1">Meus professores me chamaram para jogar na escola.</p>
+        `
+    }
+    function ano2020(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/table2.svg" alt="">
+        <p class="text_linha_da_vida1">Durante a pandemia eu não tive a oportunidade de jogar, tanto quanto os outros anos.</p>`
+    }
+    function ano2021(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/table5.svg">
+        
+        <p class="text_linha_da_vida1">Voltei a treinar em casa e também na casa dos meus amigos e lá fazíamos competições para trabalhar em cima de nossas habilidades.</p>`
+    }
+    function ano2022(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/imgMarkus.svg" alt="">
+        
+        <p class="text_linha_da_vida1">Passei para a etex e lá também tinha uma mesa de tênis de mesa. Lá eu também jogava e treinava com as pessoas que também estudavam lá.</p>
+        `
+    }
+    function ano2023(){
+        
+        img_linha_da_vida.innerHTML = `<img src="assets/img_table.svg" alt="">
+        <p class="text_linha_da_vida1">Atualmente apenas jogo por diversão</p>
+        `
+    }
+
+</script>

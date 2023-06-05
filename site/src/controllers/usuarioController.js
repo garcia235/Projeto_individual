@@ -75,7 +75,6 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else {
         
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
@@ -94,9 +93,131 @@ function cadastrar(req, res) {
     }
 }
 
+function enviarMensagem(req, res) {
+
+    var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
+    var mensagem = req.body.mensagemServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (mensagem == undefined) {
+        res.status(400).send("Sua mensagem está undefined!");
+    } else {
+        
+        usuarioModel.enviarMensagem(nome, email, mensagem, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a mensagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function inserirPartidas(req, res) {
+
+    var qtdPartidas = req.body.qntPartidasServer;
+    var score = req.body.scoreServer;
+    var time = req.body.totalTimeServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+        
+        usuarioModel.inserirPartidas(qtdPartidas, score, time, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar ao inserir dados! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+    function buscarPartidas(req, res) {
+        var fkUsuario = req.params.fkUsuarioVar;
+
+        usuarioModel.buscarPartidas(fkUsuario)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+    function buscarTempo(req, res) {
+        var fkUsuario = req.params.fkUsuarioVar;
+
+        usuarioModel.buscarTempo(fkUsuario)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+    function verificarEmail(req, res) {
+        var email = req.body.nicknameServer;
+    
+        if (email == undefined) {
+            res.status(400).send("O nickname está indefinido!");
+        } else {
+            usuarioModel.verificar_nickname(email)
+                .then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.json({ email: true });
+                    } else {
+                        res.json({ email: false });
+                    }
+                })
+                .catch(function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao verificar o nickname! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                });
+        }
+    }
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    enviarMensagem,
+    inserirPartidas,
+    buscarPartidas,
+    verificarEmail
 }

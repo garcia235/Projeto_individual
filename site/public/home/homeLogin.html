@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globais/style_menu.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="../js/funcoes.js"></script>
+    <title>Butterfly || Home</title>
+</head>
+
+<body>
+    <div class="menu_lateral">
+        <div class="container">
+            <ul>
+                <a href=""><img class="user" src="assets/🦆 icon _user_.svg" alt=""></a>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon"><img src="assets/icon_racket.svg" alt="" class="iconImg"></span>
+                        <span class="title">Jogadores</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../pong/pong.html">
+                        <span class="icon"><img src="assets/🦆 icon _device gamepad 2_.svg" alt=""
+                                class="iconImg"></span>
+                        <span class="title">Pong</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../dashboard/dashboard.html">
+                        <span class="icon"><img src="assets/🦆 icon _crown_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../faleComigo/faleComigo.html">
+                        <span class="icon"><img src="assets/🦆 icon _message circle_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Contato</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="../index.html" onclick="limparSessao()">
+                        <span class="icon"><img src="assets/🦆 icon _login_.svg" alt="" class="iconImg"></span>
+                        <span class="title">Sair</span>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+
+    <div class="container">
+        <h1 class="jogadores">Conheça os 10 melhores jogadores de tênis de mesa atualmente</h1>
+        <p class="indicacao1">1- Fan Zhendong (7700 pontos)</p>
+        <a class="btn fan" href="#open-modal">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao2">2- Tomokazu Harimoto (4550 pontos)</p>
+        <a class="btn tomokazu" href="#open-modal2">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao3">3- Ma Long (4400 pontos)</p>
+        <a class="btn ma" href="#open-modal3">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao4">4- Wang Chuqin (4345 pontos)</p>
+        <a class="btn wang" href="#open-modal4">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao5">5- Truls Moregard (3345 pontos)</p>
+        <a class="btn truls" href="#open-modal5">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao6">6- Liang Jingkun (2985 pontos)</p>
+        <a class="btn liang" href="#open-modal6">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao7">7- Hugo Calderano (2930 pontos)</p>
+        <a class="btn hugo" href="#open-modal7">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao8">8- Lin Yun-Ju (2730 pontos)</p>
+        <a class="btn lin" href="#open-modal8">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao9">9- Dimitrij Ovtcharov (2705 pontos)</p>
+        <a class="btn dimitri" href="#open-modal9">
+            <div class="div_bolinha"></div>
+        </a>
+        <p class="indicacao10">10- Darko Jorgic (2285 pontos)</p>
+        <a class="btn darko" href="#open-modal10">
+            <div class="div_bolinha"></div>
+        </a>
+    </div>
+    <div id="open-modal" class="modal-window">
+        <div class="modal">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Fan Zhendong</h1>
+            <div>
+                Chinês, Fan Zhendong tem inúmeras conquistas. <br>Atualmente, é o primeiro lugar do ranking mundial da
+                ITTF.
+            </div>
+            <div>Ele já venceu:<br>
+                Pro Tour ITTF 2013 e 2014 na categoria individual;<br>
+                Campeonato mundial em 2014 na categoria equipe;<br>
+                Já venceu inúmeros campeonatos mundiais Júnior.</div>
+            <br>
+            <img src="assets/image 4.svg" alt="">
+        </div>
+    </div>
+
+    <div id="open-modal2" class="modal-window">
+        <div class="modal2">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Tomokazu Harimoto</h1>
+            <div>
+                Muito jovem, Harimoto já foi medalhista olímpico, conquistando a medalha de bronze nos Jogos Olímpicos
+                de Verão 2020 em Tóquio.
+                <br>
+                Em 2017, venceu o primeiro título mundial individual masculino do ITTF World Tour, com 14 anos de idade.
+            </div>
+            <br>
+            <img src="assets/image 5.svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal3" class="modal-window">
+        <div class="modal3">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Ma Long</h1>
+            <div>
+                Ma Long possui inúmeras medalhas olímpicas, sendo Ouro nos jogos de Londres em 2012, Ouro no Rio 2016 na
+                categoria individual e equipes, e Ouro em Tóquio 2020 na categoria individual e equipes.
+            </div>
+            <br>
+            <img src="assets/image 6.svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal4" class="modal-window">
+        <div class="modal4">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Wang Chuqin</h1>
+            <div>
+                Wang Chuqin possui inúmeros títulos individuais, sendo campeão do ITTF da Suécia em 2019, WTT Star
+                Contender em 2022, WTT Macau em 2022 e Copa WTT também em 2022.<br>
+                Atualmente ele ocupa o ranking mais alto da sua carreira.
+            </div>
+            <br>
+            <img src="assets/image 7 (1).svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal5" class="modal-window">
+        <div class="modal5">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Truls Moregard</h1>
+            <div>
+                Sueco, Truls Moregard tem apenas 21 anos e já conquistou muitos campeonatos individuais, duplas e em
+                equipe.
+                <br>Em 2022, foi vice-campeão do top-16 da Europa e em 2021 foi vice-campeão do mundo.
+            </div>
+            <br>
+            <img src="assets/image 8.svg" alt="">
+        </div>
+    </div>
+
+    <div id="open-modal6" class="modal-window">
+        <div class="modal6">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Liang Jingkun</h1>
+            <div>
+                Liang Jingkun já foi campeão na categoria individual inúmeras vezes. A mais recente em 2023, vencendo a
+                WTT Star Contender Goa.</div>
+            <div>
+                Venceu também, em 2018, o ITTF World Tour Platinum na Áustria;<br>
+                Venceu em 2019 o Desafio ITTF Plus em Portugal;<br>
+                Em 2021 venceu o WTT Contender Lasko e Novo Mesto;<br>
+                Em 2022 venceu o WTT Contender Mascate.</div>
+            <br>
+            <img src="assets/image 9.svg" alt="">
+        </div>
+    </div>
+
+    <div id="open-modal7" class="modal-window">
+        <div class="modal7">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Hugo Calderano</h1>
+            <div>
+                A lista de melhores jogadores de tênis de mesa do mundo também traz um brasileiro: Hugo Calderano.
+                É medalhista em inúmeros eventos, como jogos Pan-Americanos e Jogos Olímpicos da Juventude. Em 2018, foi
+                indicado ao ITTF Star Awards como o melhor atleta masculino do ano. Em 2017, foi campeão individual e em
+                duplas no Aberto do Brasil.
+            </div>
+            <br>
+            <img src="assets/image 10.svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal8" class="modal-window">
+        <div class="modal8">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Lin Yun-Ju</h1>
+            <div>
+                Nos jogos olímpicos de Tóquio em 2020, Lin Yun-Ju foi Bronze nas duplas mistas do tênis de mesa.
+            </div>
+            <div>Yun-ju conquistou a medalha de bronze nos Jogos Olímpicos de Verão de 2020 em Tóquio, como
+                representante de Taipé Chinês, na prova de duplas mistas, ao lado de Cheng I-ching, após derrotarem os
+                franceses Emmanuel Lebesson e Jia Nan Yuan por 4-0.</div>
+            <br>
+            <img src="assets/image 11.svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal9" class="modal-window">
+        <div class="modal">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Dimitrij Ovtcharov</h1>
+            <div>
+                De Kiev, Dimitrij já conquistou inúmeras medalhas olímpicas: Prata em Pequim 2008 e Tóquio 2020 e Bronze
+                no Rio 2016, Tóquio 2020 e Londres 2012.
+            </div>
+            <br>
+            <img src="assets/image 11.svg" alt="">
+        </div>
+    </div>
+    <div id="open-modal10" class="modal-window">
+        <div class="modal10">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Darko Jorgic</h1>
+            <div>
+                O Sloveno Darko Jorgic já venceu três vezes na categoria individual: em 2018, nos Jogos do Mediterrâneo,
+                em 2022, no Europa Top-16 e em 2023 também no Europa Top-16.
+                Ele é conhecido pelo seu saque único com o backhand mais distante do forehand.
+            </div>
+            <br>
+            <img src="assets/image 13.svg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

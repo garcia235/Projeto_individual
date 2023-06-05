@@ -123,7 +123,7 @@
                       <div class="card-front">
                         <div class="center-wrap">
                           <div class="section text-center">
-                            <a class="arrow" href="../landing_page/landing_page.html"><img src="img/arrow_back.svg"
+                            <a class="arrow" href="../index.html"><img src="img/arrow_back.svg"
                                 alt=""></a>
                             <h4 class="mb-4 pb-3">Log In</h4>
                             <div class="form-group">
@@ -198,8 +198,7 @@
     function cadastrar() {
         aguardar();
 
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
+        //Re
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -207,24 +206,31 @@
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha os campos";
 
             finalizarAguardar();
             return false;
+        }
+        else if (!emailVar.includes("@gmail.com") && !emailVar.includes("@hotmail.com") && !emailVar.includes("@outlook.com")) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = `Email inválido deve conter @ e .`;
+        } else if (senhaVar.length <= 6) {
+          cardErro.style.display = "block"
+            mensagem_erro.innerHTML = `A senha deve conter mais de 6 caracteres`;
+        } else if(!(senhaVar == confirmacaoSenhaVar)){
+          cardErro.style.display = "block"
+          mensagem_erro.innerHTML = `As senhas não coincidem`;
         }
         else {
             setInterval(sumirMensagem, 5000)
         }
 
-        // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
@@ -265,10 +271,20 @@
         var emailVar = email_input1.value;
         var senhaVar = senha_input1.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (emailVar.indexOf("@") == -1 && emailVar.indexOf(".") == -1) {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            mensagem_erro.innerHTML = "O email deve conter @ e .";
+
+            return false;
+        }
+        else if(senhaVar != senhaVar ){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Senha incorreta";
+
+            return false;
+        } else if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos";
             return false;
         }
         else {
@@ -299,12 +315,11 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "../pong/pong.html";
-                    }, 1000); // apenas para exibir o loading
-
+                        window.location = "../home/homeLogin.html";
+                    }, 1000); 
                 });
 
             } else {
